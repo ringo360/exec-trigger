@@ -1,5 +1,6 @@
 import { execa } from 'execa';
 import { Hono } from 'hono';
+import { serve } from '@hono/node-server';
 import config from '../config.json';
 
 const app = new Hono();
@@ -51,4 +52,8 @@ app.get('/run', async (c) => {
 	}
 });
 
-export default app;
+console.log('Server started in http://localhost:8787/');
+serve({
+	fetch: app.fetch,
+	port: 8787,
+});
