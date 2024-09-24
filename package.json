@@ -4,6 +4,7 @@
 		"start": "tsx src/index.ts",
 		"dev": "tsx watch src/index.ts"
 	},
+	"type": "module",
 	"dependencies": {
 		"@hono/node-server": "^1.13.1",
 		"@types/node": "^22.5.5",
